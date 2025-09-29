@@ -10,22 +10,24 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등" />
 <meta property="og:description" content="Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등" />
-<link rel="canonical" href="http://0.0.0.0:4000/about/" />
-<meta property="og:url" content="http://0.0.0.0:4000/about/" />
+<link rel="canonical" href="http://localhost:4000/about/" />
+<meta property="og:url" content="http://localhost:4000/about/" />
 <meta property="og:site_name" content="Munyong’s Blog" />
+<meta property="og:image" content="http://localhost:4000/assets/img/og-default.png" />
 <meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/og-default.png" />
 <meta property="twitter:title" content="소개" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Munyong Heo"},"description":"Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등","headline":"소개","name":"Munyong’s Blog","url":"http://0.0.0.0:4000/about/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Munyong Heo"},"description":"Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등","headline":"소개","image":"http://localhost:4000/assets/img/og-default.png","name":"Munyong’s Blog","url":"http://localhost:4000/about/"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Munyong’s Blog" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Munyong’s Blog" /></head>
 <body><header class="site-header">
-  <div class="container nav">
-    <nav class="tabs" aria-label="Primary">
+  <div class="nav-container">
+    <nav class="tabs" aria-label="Primary navigation">
       <a class="tab is-active" href="/about/">소개</a>
-      <a class="tab " href="/kpop/">철학 블로그</a>
       <a class="tab " href="/">기술 블로그</a>
+      <a class="tab " href="/kpop/">철학 블로그</a>
       <a class="tab" href="https://github.com/gjansdyd" target="_blank" rel="noopener">Github</a>
     </nav>
   </div>
@@ -39,20 +41,22 @@
   </header>
 
   <div class="post-content">
-    <section class="about">
-  <h1>안녕하세요, 문용입니다.</h1>
-  <p>iOS 개발자이며, 이 블로그에는 Kpop 가사를 철학적으로 읽기, Apple Developer 문서 번역, 기타 생각을 정리합니다.</p>
+    <div class="container">
+  <section class="about">
+    <h1>안녕하세요, 문용입니다.</h1>
+    <p>iOS 개발자이며, 이 블로그에는 Kpop 가사를 철학적으로 읽기, Apple Developer 문서 번역, 기타 생각을 정리합니다.</p>
 
-  <h2>관심사</h2>
-  <ul>
-    <li>Kpop 가사 해석(철학/인문학적으로)</li>
-    <li>Apple 생태계, iOS 프레임워크</li>
-    <li>문서화, 번역, 글쓰기</li>
-  </ul>
+    <h2>관심사</h2>
+    <ul>
+      <li>Kpop 가사 해석(철학/인문학적으로)</li>
+      <li>Apple 생태계, iOS 프레임워크</li>
+      <li>문서화, 번역, 글쓰기</li>
+    </ul>
 
-  <h2>연락</h2>
-  <p>GitHub: <a href="https://github.com/gjansdyd" target="_blank" rel="noopener">gjansdyd</a></p>
-</section>
+    <h2>연락</h2>
+    <p>GitHub: <a href="https://github.com/gjansdyd" target="_blank" rel="noopener">gjansdyd</a></p>
+  </section>
+</div>
 
   </div>
 
@@ -83,6 +87,8 @@
   </div>
 
 </footer>
-</body>
+<!-- 커스텀 CSS -->
+    <link rel="stylesheet" href="/assets/css/custom.css">
+  </body>
 
 </html>

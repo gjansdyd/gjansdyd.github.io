@@ -1,8 +1,11 @@
-title: Munyong’s Blog
+title: Munyong's Blog
 description: Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등
 theme: minima
 timezone: Asia/Seoul
 future: true
+
+# 커스텀 헤드 포함
+head_custom: true
 
 # 헤더 메뉴에 표시할 페이지 (루트에 있는 .md 파일들)
 header_pages:
