@@ -9,7 +9,7 @@ permalink: /etc/
   {% for post in posts_in_cat %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <small>— {{ post.date | date: "%Y-%m-%d" }}</small>
+      <small> — {{ post.date | date: "%Y-%m-%d" }}</small>
     </li>
   {% endfor %}
   {% if posts_in_cat == nil or posts_in_cat.size == 0 %}
