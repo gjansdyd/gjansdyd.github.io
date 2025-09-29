@@ -34,3 +34,4 @@ defaults:
 - scope: { path: "" }
   values:
     image: /assets/img/og-default.png
+    read_time: true

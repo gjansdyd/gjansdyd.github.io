@@ -2,10 +2,17 @@
 layout: default
 ---
 
-<article class="post">
+<a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
+
+<article class="post" id="main-content">
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
-    <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}</p>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% if page.categories and page.categories.size > 0 %}
+        · {{ page.categories | join: " / " }}
+      {% endif %}
+    </p>
   </header>
 
   <div class="post-content">

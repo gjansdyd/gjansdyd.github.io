@@ -1,0 +1,53 @@
+{% comment %}
+  포스트 카드 컴포넌트
+  사용법: {% include post-card.html post=post %}
+{% endcomment %}
+
+<li class="post-card">
+  <a href="{{ include.post.url | relative_url }}" class="post-card__link">
+    {% if include.post.image %}
+      <div class="post-card__thumbnail">
+        <img src="{{ include.post.image | relative_url }}" 
+             alt="{{ include.post.title | escape }}" 
+             loading="lazy"
+             class="post-card__image">
+      </div>
+    {% endif %}
+    
+    <div class="post-card__content">
+      <h3 class="post-card__title">{{ include.post.title | escape }}</h3>
+      
+      <div class="post-card__meta">
+        <time class="post-card__date" datetime="{{ include.post.date | date_to_xmlschema }}">
+          {{ include.post.date | date: "%Y년 %m월 %d일" }}
+        </time>
+        {% if include.post.categories.size > 0 %}
+          <span class="post-card__category">{{ include.post.categories.first }}</span>
+        {% endif %}
+        {% if include.post.read_time != false %}
+          {% assign words = include.post.content | strip_html | number_of_words %}
+          {% assign read_time = words | divided_by: 200.0 | ceil %}
+          {% if read_time < 1 %}
+            {% assign read_time = 1 %}
+          {% endif %}
+          <span class="post-card__read-time">{{ read_time }}분 읽기</span>
+        {% endif %}
+      </div>
+      
+      {% if include.post.excerpt %}
+        <p class="post-card__excerpt">{{ include.post.excerpt | strip_html | truncate: 120 }}</p>
+      {% endif %}
+      
+      {% if include.post.tags.size > 0 %}
+        <div class="post-card__tags">
+          {% for tag in include.post.tags limit: 3 %}
+            <span class="tag-chip">{{ tag }}</span>
+          {% endfor %}
+          {% if include.post.tags.size > 3 %}
+            <span class="tag-chip tag-chip--more">+{{ include.post.tags.size | minus: 3 }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </a>
+</li>

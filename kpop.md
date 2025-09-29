@@ -2,20 +2,30 @@
 layout: page
 title: "Kpop 가사 철학적으로 읽기"
 permalink: /kpop/
+description: "K-pop 가사를 철학적 관점에서 분석하고 해석하는 글들"
 ---
 
-<ul class="cards">
+<div class="page-header">
+  <h1 class="page-title">{{ page.title }}</h1>
+  <p class="page-description">{{ page.description }}</p>
+</div>
+
+<ul class="post-list flat">
   {% assign posts_in_cat = site.posts | where_exp: "p", "p.categories contains 'kpop'" | sort: "date" | reverse %}
   {% for post in posts_in_cat %}
-    <li class="card">
-      <a href="{{ post.url | relative_url }}">
-        <h3>{{ post.title }}</h3>
-        <p class="meta">{{ post.date | date: "%Y-%m-%d" }}</p>
-        <p class="excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+    <li class="post-item">
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        <span class="post-title">{{ post.title }}</span>
       </a>
+      {% if post.excerpt %}
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+      {% endif %}
     </li>
   {% endfor %}
   {% if posts_in_cat == nil or posts_in_cat.size == 0 %}
-    <li>아직 kpop 글이 없어요.</li>
+    <li class="empty-state">
+      <p>아직 K-pop 글이 없어요. 곧 흥미로운 글들을 준비할 예정입니다! 🎵</p>
+    </li>
   {% endif %}
 </ul>
