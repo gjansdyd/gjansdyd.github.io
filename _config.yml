@@ -3,7 +3,10 @@ description: Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등
 theme: minima
 timezone: Asia/Seoul
 
-# 상단 메뉴에 표시할 페이지
+# 미래 날짜 글도 표시(UTC 빌드 오차 대비)
+future: true
+
+# 상단 메뉴
 header_pages:
   - kpop.md
   - apple.md
