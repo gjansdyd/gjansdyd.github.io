@@ -3,22 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>메모/기타: (주제) | Munyong’s Blog</title>
+<title>Search | Munyong’s Blog</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="메모/기타: (주제)" />
+<meta property="og:title" content="Search" />
 <meta name="author" content="Munyong Heo" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="여는 문단(인트로)을 간단히 쓰고… 목차" />
-<meta property="og:description" content="여는 문단(인트로)을 간단히 쓰고… 목차" />
-<link rel="canonical" href="http://0.0.0.0:4000/etc/2025/09/29/etc-first/" />
-<meta property="og:url" content="http://0.0.0.0:4000/etc/2025/09/29/etc-first/" />
+<meta name="description" content="Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등" />
+<meta property="og:description" content="Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등" />
+<link rel="canonical" href="http://0.0.0.0:4000/search/" />
+<meta property="og:url" content="http://0.0.0.0:4000/search/" />
 <meta property="og:site_name" content="Munyong’s Blog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-09-29T12:20:00+09:00" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="메모/기타: (주제)" />
+<meta property="twitter:title" content="Search" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Munyong Heo"},"dateModified":"2025-09-29T12:20:00+09:00","datePublished":"2025-09-29T12:20:00+09:00","description":"여는 문단(인트로)을 간단히 쓰고… 목차","headline":"메모/기타: (주제)","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/etc/2025/09/29/etc-first/"},"url":"http://0.0.0.0:4000/etc/2025/09/29/etc-first/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Munyong Heo"},"description":"Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등","headline":"Search","url":"http://0.0.0.0:4000/search/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Munyong’s Blog" /></head>
 <body><header class="site-header" role="banner">
@@ -38,32 +37,49 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">메모/기타: (주제)</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="2025-09-29T12:20:00+09:00" itemprop="datePublished">Sep 29, 2025
-      </time></p>
+    <h1 class="post-title">Search</h1>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>여는 문단(인트로)을 간단히 쓰고…</p>
-<div id="toc" style="border:1px solid #eee;border-radius:8px;padding:12px;margin:12px 0;">
-  <strong>목차</strong>
-  <!-- 여기 내용은 JS가 채워줍니다 -->
-</div>
+  <div class="post-content">
+    <p><input id="search-input" type="search" placeholder="검색어를 입력하세요" style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;" /></p>
+<ul id="search-results"></ul>
 
-<h2 id="1-첫-번째-섹션">1. 첫 번째 섹션</h2>
-<p>본문…</p>
+<script>
+(async function(){
+  const res = await fetch('/search.json');
+  const data = await res.json();
+  const $in = document.getElementById('search-input');
+  const $out = document.getElementById('search-results');
 
-<h3 id="1-1-하위-섹션">1-1. 하위 섹션</h3>
-<p>본문…</p>
+  function r(item, q){
+    const t = (item.title||'') + ' ' + (item.excerpt||'') + ' ' + (item.categories||[]).join(' ') + ' ' + (item.tags||[]).join(' ');
+    return t.toLowerCase().includes(q.toLowerCase());
+  }
 
-<h2 id="2-두-번째-섹션">2. 두 번째 섹션</h2>
-<p>본문…</p>
+  function render(list){
+    if (!list.length) { $out.innerHTML = '<li>검색 결과가 없습니다.</li>'; return; }
+    $out.innerHTML = list.map(p => `
+      <li style="margin:6px 0;">
+        <a href="${p.url}">${p.title}</a>
+        <small> — ${p.date}</small>
+      </li>
+    `).join('');
+  }
 
-  </div><a class="u-url" href="/etc/2025/09/29/etc-first/" hidden></a>
+  $in.addEventListener('input', () => {
+    const q = $in.value.trim();
+    if (!q) { $out.innerHTML = ''; return; }
+    render(data.filter(d => r(d, q)).slice(0, 50));
+  });
+})();
+</script>
+
+
+  </div>
+
 </article>
 
       </div>

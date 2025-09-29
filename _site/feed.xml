@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-09-29T15:31:04+09:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Munyong’s Blog</title><subtitle>Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등</subtitle><author><name>Munyong Heo</name></author><entry><title type="html">메모/기타: (주제)</title><link href="http://0.0.0.0:4000/etc/2025/09/29/etc-first/" rel="alternate" type="text/html" title="메모/기타: (주제)" /><published>2025-09-29T12:20:00+09:00</published><updated>2025-09-29T12:20:00+09:00</updated><id>http://0.0.0.0:4000/etc/2025/09/29/etc-first</id><content type="html" xml:base="http://0.0.0.0:4000/etc/2025/09/29/etc-first/"><![CDATA[<p>가벼운 에세이/메모/아이디어 정리…</p>]]></content><author><name>Munyong Heo</name></author><category term="etc" /><summary type="html"><![CDATA[가벼운 에세이/메모/아이디어 정리…]]></summary></entry><entry><title type="html">Apple 문서 번역: (문서 제목)</title><link href="http://0.0.0.0:4000/apple/2025/09/29/apple-first/" rel="alternate" type="text/html" title="Apple 문서 번역: (문서 제목)" /><published>2025-09-29T12:10:00+09:00</published><updated>2025-09-29T12:10:00+09:00</updated><id>http://0.0.0.0:4000/apple/2025/09/29/apple-first</id><content type="html" xml:base="http://0.0.0.0:4000/apple/2025/09/29/apple-first/"><![CDATA[<p>원문 링크, 번역, 용어 주석 등을 정리합니다.</p>]]></content><author><name>Munyong Heo</name></author><category term="apple" /><summary type="html"><![CDATA[원문 링크, 번역, 용어 주석 등을 정리합니다.]]></summary></entry><entry><title type="html">〈곡 제목〉을 철학적으로 읽기: (부제)</title><link href="http://0.0.0.0:4000/kpop/2025/09/29/kpop-first/" rel="alternate" type="text/html" title="〈곡 제목〉을 철학적으로 읽기: (부제)" /><published>2025-09-29T12:00:00+09:00</published><updated>2025-09-29T12:00:00+09:00</updated><id>http://0.0.0.0:4000/kpop/2025/09/29/kpop-first</id><content type="html" xml:base="http://0.0.0.0:4000/kpop/2025/09/29/kpop-first/"><![CDATA[<p>여기에 본문을 씁니다. 가사 인용과 철학 개념 연결 메모…</p>]]></content><author><name>Munyong Heo</name></author><category term="kpop" /><summary type="html"><![CDATA[여기에 본문을 씁니다. 가사 인용과 철학 개념 연결 메모…]]></summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-09-29T15:41:52+09:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Munyong’s Blog</title><subtitle>Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등</subtitle><author><name>Munyong Heo</name></author><entry><title type="html">메모/기타: (주제)</title><link href="http://0.0.0.0:4000/etc/2025/09/29/etc-first/" rel="alternate" type="text/html" title="메모/기타: (주제)" /><published>2025-09-29T12:20:00+09:00</published><updated>2025-09-29T12:20:00+09:00</updated><id>http://0.0.0.0:4000/etc/2025/09/29/etc-first</id><content type="html" xml:base="http://0.0.0.0:4000/etc/2025/09/29/etc-first/"><![CDATA[<p>여는 문단(인트로)을 간단히 쓰고…</p>
+<div id="toc" style="border:1px solid #eee;border-radius:8px;padding:12px;margin:12px 0;">
+  <strong>목차</strong>
+  <!-- 여기 내용은 JS가 채워줍니다 -->
+</div>
+
+<h2 id="1-첫-번째-섹션">1. 첫 번째 섹션</h2>
+<p>본문…</p>
+
+<h3 id="1-1-하위-섹션">1-1. 하위 섹션</h3>
+<p>본문…</p>
+
+<h2 id="2-두-번째-섹션">2. 두 번째 섹션</h2>
+<p>본문…</p>]]></content><author><name>Munyong Heo</name></author><category term="etc" /><summary type="html"><![CDATA[여는 문단(인트로)을 간단히 쓰고… 목차]]></summary></entry><entry><title type="html">Apple 문서 번역: (문서 제목)</title><link href="http://0.0.0.0:4000/apple/2025/09/29/apple-first/" rel="alternate" type="text/html" title="Apple 문서 번역: (문서 제목)" /><published>2025-09-29T12:10:00+09:00</published><updated>2025-09-29T12:10:00+09:00</updated><id>http://0.0.0.0:4000/apple/2025/09/29/apple-first</id><content type="html" xml:base="http://0.0.0.0:4000/apple/2025/09/29/apple-first/"><![CDATA[<p>여는 문단(인트로)을 간단히 쓰고…</p>
+<div id="toc" style="border:1px solid #eee;border-radius:8px;padding:12px;margin:12px 0;">
+  <strong>목차</strong>
+  <!-- 여기 내용은 JS가 채워줍니다 -->
+</div>
+
+<h2 id="1-첫-번째-섹션">1. 첫 번째 섹션</h2>
+<p>본문…</p>
+
+<h3 id="1-1-하위-섹션">1-1. 하위 섹션</h3>
+<p>본문…</p>
+
+<h2 id="2-두-번째-섹션">2. 두 번째 섹션</h2>
+<p>본문…</p>]]></content><author><name>Munyong Heo</name></author><category term="apple" /><summary type="html"><![CDATA[여는 문단(인트로)을 간단히 쓰고… 목차]]></summary></entry><entry><title type="html">〈곡 제목〉을 철학적으로 읽기: (부제)</title><link href="http://0.0.0.0:4000/kpop/2025/09/29/kpop-first/" rel="alternate" type="text/html" title="〈곡 제목〉을 철학적으로 읽기: (부제)" /><published>2025-09-29T12:00:00+09:00</published><updated>2025-09-29T12:00:00+09:00</updated><id>http://0.0.0.0:4000/kpop/2025/09/29/kpop-first</id><content type="html" xml:base="http://0.0.0.0:4000/kpop/2025/09/29/kpop-first/"><![CDATA[<p>여는 문단(인트로)을 간단히 쓰고…</p>
+<div id="toc" style="border:1px solid #eee;border-radius:8px;padding:12px;margin:12px 0;">
+  <strong>목차</strong>
+  <!-- 여기 내용은 JS가 채워줍니다 -->
+</div>
+
+<h2 id="1-첫-번째-섹션">1. 첫 번째 섹션</h2>
+<p>본문…</p>
+
+<h3 id="1-1-하위-섹션">1-1. 하위 섹션</h3>
+<p>본문…</p>
+
+<h2 id="2-두-번째-섹션">2. 두 번째 섹션</h2>
+<p>본문…</p>]]></content><author><name>Munyong Heo</name></author><category term="kpop" /><summary type="html"><![CDATA[여는 문단(인트로)을 간단히 쓰고… 목차]]></summary></entry></feed>

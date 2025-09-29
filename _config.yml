@@ -10,6 +10,7 @@ header_pages:
   - apple.md
   - etc.md
   - new.md
+  - search.md
 
 # GitHub Pages에서 지원되는 플러그인만 사용
 plugins:
@@ -21,3 +22,10 @@ permalink: /:categories/:year/:month/:day/:title/
 
 author:
   name: "Munyong Heo"
+
+markdown: kramdown
+highlighter: rouge
+# rouge_theme: github   # (원하면 다른 테마명도 가능)
+kramdown:
+  input: GFM
+  hard_wrap: false

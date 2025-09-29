@@ -1,0 +1,38 @@
+/* 기본 여백/모서리 (버튼/카드 느낌 개선) */
+a, button { border-radius: 8px; }
+
+/* 다크모드 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --fg: #e6e6e6;
+    --muted: #9aa0a6;
+    --link: #8ab4f8;
+    --card: #171a21;
+    --border: #2a2f3a;
+    --code-bg: #11141a;
+  }
+  body {
+    background: var(--bg) !important;
+    color: var(--fg) !important;
+  }
+  a { color: var(--link) !important; }
+  header.site-header, footer.site-footer, .site-nav .page-link {
+    background: var(--bg) !important;
+    color: var(--fg) !important;
+  }
+  .page-content {
+    background: var(--bg) !important;
+  }
+  .post-list > li, article.post, .post-content, .home .post-list, .page {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  code, pre {
+    background: var(--code-bg) !important;
+    color: var(--fg) !important;
+  }
+  hr { border-color: var(--border); }
+}
