@@ -1,10 +1,8 @@
 <header class="site-header">
-  <div class="nav-container">
-    <nav class="tabs" aria-label="Primary navigation">
-      <a class="tab {% if page.url == '/about/' %}is-active{% endif %}" href="{{ '/about/' | relative_url }}">소개</a>
-      <a class="tab {% if page.url == '/' or page.layout == 'post' or page.url contains '/apple/' or page.url contains '/etc/' %}is-active{% endif %}" href="{{ '/' | relative_url }}">기술 블로그</a>
-      <a class="tab {% if page.url contains '/kpop/' %}is-active{% endif %}" href="{{ '/kpop/' | relative_url }}">철학 블로그</a>
-      <a class="tab" href="https://github.com/gjansdyd" target="_blank" rel="noopener">Github</a>
-    </nav>
-  </div>
+  <nav class="nav-container" aria-label="Primary navigation">
+    <a class="nav__tab {% if page.url == '/about/' %}nav__tab--active{% endif %}" href="{{ '/about/' | relative_url }}">소개</a>
+    <a class="nav__tab {% if page.url == '/' or page.layout == 'post' or page.url contains '/apple/' or page.url contains '/etc/' %}nav__tab--active{% endif %}" href="{{ '/' | relative_url }}">기술 블로그</a>
+    <a class="nav__tab {% if page.url contains '/kpop/' %}nav__tab--active{% endif %}" href="{{ '/kpop/' | relative_url }}">철학 블로그</a>
+    <a class="nav__tab" href="https://github.com/gjansdyd" target="_blank" rel="noopener">Github</a>
+  </nav>
 </header>

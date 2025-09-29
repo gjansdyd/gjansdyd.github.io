@@ -1,18 +1,17 @@
 /* ==========================================================================
-   Apple-Inspired Jekyll Blog Design
-   Ultra-clean, type-first, generous whitespace, precise rhythm
+   Apple-Inspired Jekyll Blog Design - Clean & Refactored
    ========================================================================== */
 
 /* ==========================================================================
-   1. Apple Design System Variables
+   1. Design System Variables
    ========================================================================== */
 
 :root {
-  /* Apple Font Stack - Korean First */
+  /* Typography */
   --font-family: -apple-system, system-ui, "SF Pro", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
   --font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
   
-  /* Enhanced Color System - High Visibility */
+  /* Colors - Light Mode */
   --color-bg: #FBFBFD;
   --color-text: #111111;
   --color-text-muted: #5B6472;
@@ -22,7 +21,7 @@
   --color-card: #FFFFFF;
   --color-accent: #0A84FF;
   
-  /* Typography Scale - Precise Apple Proportions */
+  /* Typography Scale */
   --text-h1: 2.125rem;  /* 34px */
   --text-h2: 1.625rem;  /* 26px */
   --text-h3: 1.25rem;   /* 20px */
@@ -41,7 +40,7 @@
   
   /* Layout */
   --container-max: 1400px;
-  --container-padding: clamp(1rem, 2vw, 1.5rem);
+  --container-padding: clamp(2rem, 4vw, 3rem);
   
   /* Line Heights */
   --leading-tight: 1.25;
@@ -54,10 +53,9 @@
   
   /* Motion */
   --transition: 120ms ease;
-  --transition-slow: 200ms ease;
 }
 
-/* Apple Dark Mode */
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #0F1115;
@@ -72,7 +70,7 @@
 }
 
 /* ==========================================================================
-   2. Base Styles & Reset
+   2. Base Styles
    ========================================================================== */
 
 * {
@@ -111,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: var(--text-h1); }
 h2 { font-size: var(--text-h2); }
-h3 { font-size: 1.25rem; }
+h3 { font-size: var(--text-h3); }
 h4 { font-size: 1.125rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: var(--text-small); }
@@ -132,21 +130,15 @@ a:hover {
   text-decoration: underline;
 }
 
-a:focus {
+a:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: var(--radius-small);
 }
 
 /* ==========================================================================
-   4. Layout Container
+   4. Layout
    ========================================================================== */
-
-.container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-}
 
 .wrapper {
   max-width: var(--container-max);
@@ -155,7 +147,7 @@ a:focus {
 }
 
 /* ==========================================================================
-   5. Header Navigation - Apple Style
+   5. Header Navigation
    ========================================================================== */
 
 .site-header {
@@ -174,22 +166,14 @@ a:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-12);
   height: 64px;
   width: 100%;
   max-width: var(--container-max);
   padding: 0 var(--container-padding);
 }
 
-.tabs {
-  display: flex;
-  gap: var(--space-12);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.tab {
+.nav__tab {
   position: relative;
   color: var(--color-text);
   text-decoration: none;
@@ -200,17 +184,17 @@ a:focus {
   border-radius: var(--radius-small);
 }
 
-.tab:hover {
+.nav__tab:hover {
   color: var(--color-link);
   text-decoration: none;
 }
 
-.tab.is-active {
+.nav__tab--active {
   color: var(--color-link);
   font-weight: 600;
 }
 
-.tab.is-active::after {
+.nav__tab--active::after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -222,14 +206,16 @@ a:focus {
   border-radius: 2px;
 }
 
-.tab:focus-visible {
-  outline: 2px solid var(--color-link);
-  outline-offset: 2px;
-  border-radius: var(--radius-small);
+/* ==========================================================================
+   6. Main Content
+   ========================================================================== */
+
+.page-content {
+  min-height: calc(100vh - 64px);
 }
 
 /* ==========================================================================
-   6. Blog List - Apple Style
+   7. Blog List
    ========================================================================== */
 
 .post-list {
@@ -252,7 +238,7 @@ a:focus {
   transform: translateY(-1px);
 }
 
-.post-link {
+.post__link {
   display: flex;
   gap: var(--space-4);
   align-items: baseline;
@@ -261,12 +247,12 @@ a:focus {
   transition: color var(--transition);
 }
 
-.post-link:hover {
+.post__link:hover {
   color: var(--color-link);
   text-decoration: none;
 }
 
-.post-date {
+.post__date {
   font-variant-numeric: tabular-nums;
   font-size: var(--text-small);
   color: var(--color-text-muted);
@@ -275,14 +261,14 @@ a:focus {
   font-weight: 500;
 }
 
-.post-title {
+.post__title {
   font-weight: 600;
   font-size: var(--text-body);
   line-height: var(--leading-tight);
   flex: 1;
 }
 
-.post-excerpt {
+.post__excerpt {
   margin: var(--space-2) 0 0;
   font-size: var(--text-small);
   color: var(--color-text-muted);
@@ -290,7 +276,7 @@ a:focus {
 }
 
 /* ==========================================================================
-   7. Post Layout - Apple Style
+   8. Post Layout
    ========================================================================== */
 
 .post {
@@ -299,12 +285,12 @@ a:focus {
   padding: var(--space-8) var(--container-padding);
 }
 
-.post-header {
+.post__header {
   margin-bottom: var(--space-12);
   text-align: left;
 }
 
-.post-title {
+.post__title {
   font-size: var(--text-h1);
   font-weight: 600;
   line-height: var(--leading-tight);
@@ -312,20 +298,20 @@ a:focus {
   color: var(--color-text);
 }
 
-.post-meta {
+.post__meta {
   font-size: var(--text-small);
   color: var(--color-text-muted);
   margin-bottom: var(--space-8);
   font-variant-numeric: tabular-nums;
 }
 
-.post-content {
+.post__content {
   font-size: var(--text-body);
   line-height: var(--leading-normal);
   color: var(--color-text);
 }
 
-.post-content img {
+.post__content img {
   max-width: 100%;
   height: auto;
   border-radius: var(--radius);
@@ -333,7 +319,7 @@ a:focus {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.post-content figcaption {
+.post__content figcaption {
   text-align: center;
   font-size: var(--text-small);
   color: var(--color-text-muted);
@@ -342,7 +328,7 @@ a:focus {
 }
 
 /* ==========================================================================
-   8. Code & Content
+   9. Code & Content
    ========================================================================== */
 
 code {
@@ -385,29 +371,8 @@ blockquote p:last-child {
   margin-bottom: 0;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: var(--space-8) 0;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-th, td {
-  padding: var(--space-3) var(--space-4);
-  text-align: left;
-  border-bottom: 1px solid var(--color-border);
-}
-
-th {
-  background: rgba(0, 0, 0, 0.02);
-  font-weight: 600;
-  color: var(--color-text);
-}
-
 /* ==========================================================================
-   9. TOC - Sticky Sidebar
+   10. TOC
    ========================================================================== */
 
 #toc {
@@ -451,7 +416,7 @@ th {
 
 /* Desktop sticky TOC */
 @media (min-width: 1024px) {
-  .post-content {
+  .post__content {
     display: grid;
     grid-template-columns: 1fr 280px;
     gap: var(--space-12);
@@ -466,34 +431,8 @@ th {
   }
 }
 
-/* Tablet TOC */
-@media (max-width: 1023px) and (min-width: 769px) {
-  #toc {
-    margin: var(--space-6) 0;
-    padding: var(--space-3);
-  }
-}
-
-/* Mobile TOC */
-@media (max-width: 768px) {
-  #toc {
-    margin: var(--space-4) 0;
-    padding: var(--space-2);
-  }
-  
-  #toc h3 {
-    font-size: 0.9375rem;
-    margin-bottom: var(--space-2);
-  }
-  
-  #toc a {
-    font-size: 0.8125rem;
-    padding: var(--space-1);
-  }
-}
-
 /* ==========================================================================
-   10. Post Navigation
+   11. Post Navigation
    ========================================================================== */
 
 .post-nav {
@@ -504,7 +443,7 @@ th {
   flex-wrap: wrap;
 }
 
-.post-nav a {
+.post-nav__link {
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -520,19 +459,19 @@ th {
   max-width: 300px;
 }
 
-.post-nav a:hover {
+.post-nav__link:hover {
   background: var(--color-accent);
   color: white;
   transform: translateY(-1px);
   text-decoration: none;
 }
 
-.post-nav .next {
+.post-nav__link--next {
   text-align: right;
   margin-left: auto;
 }
 
-.post-nav .prev {
+.post-nav__link--prev {
   text-align: left;
 }
 
@@ -556,40 +495,8 @@ th {
   overflow: hidden;
 }
 
-/* Post Navigation Responsive */
-@media (max-width: 768px) {
-  .post-nav {
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-  
-  .post-nav a {
-    min-width: auto;
-    max-width: none;
-    padding: var(--space-2) var(--space-3);
-  }
-  
-  .post-nav__title {
-    font-size: 0.8125rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .post-nav a {
-    padding: var(--space-2);
-  }
-  
-  .post-nav__label {
-    font-size: 0.6875rem;
-  }
-  
-  .post-nav__title {
-    font-size: 0.75rem;
-  }
-}
-
 /* ==========================================================================
-   11. Page Header
+   12. Page Header
    ========================================================================== */
 
 .page-header {
@@ -597,7 +504,7 @@ th {
   text-align: left;
 }
 
-.page-title {
+.page__title {
   font-size: var(--text-h1);
   font-weight: 600;
   margin: 0 0 var(--space-4) 0;
@@ -605,7 +512,7 @@ th {
   color: var(--color-text);
 }
 
-.page-description {
+.page__description {
   font-size: var(--text-body);
   color: var(--color-text-muted);
   margin: 0;
@@ -613,7 +520,26 @@ th {
 }
 
 /* ==========================================================================
-   12. About Page
+   13. Footer
+   ========================================================================== */
+
+.site-footer {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-8) 0;
+  margin-top: var(--space-16);
+  text-align: center;
+}
+
+.footer__text {
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   14. About Page
    ========================================================================== */
 
 .about h1 {
@@ -648,55 +574,25 @@ th {
 }
 
 /* ==========================================================================
-   12. Responsive Design
+   15. Responsive Design
    ========================================================================== */
-
-/* Large screens (1200px+) */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1000px;
-  }
-  
-  .post {
-    padding: var(--space-12) var(--container-padding);
-  }
-}
-
-/* Tablets (768px - 1199px) */
-@media (max-width: 1199px) and (min-width: 769px) {
-  .container {
-    max-width: 720px;
-  }
-  
-  .post {
-    padding: var(--space-8) var(--container-padding);
-  }
-  
-  .post-title {
-    font-size: clamp(1.75rem, 3vw, 2rem);
-  }
-}
 
 /* Mobile landscape (481px - 768px) */
 @media (max-width: 768px) {
   .nav-container {
     height: auto;
     padding: var(--space-4) 0;
-  }
-  
-  .tabs {
     gap: var(--space-8);
     flex-wrap: wrap;
     justify-content: center;
   }
   
-  .tab {
+  .nav__tab {
     font-size: 0.875rem;
     padding: var(--space-2) var(--space-3);
   }
   
-  .container {
-    max-width: 100%;
+  .wrapper {
     padding: 0 var(--space-4);
   }
   
@@ -704,29 +600,29 @@ th {
     padding: var(--space-6) var(--space-4);
   }
   
-  .post-title {
+  .post__title {
     font-size: clamp(1.5rem, 4vw, 1.875rem);
     margin-bottom: var(--space-4);
   }
   
-  .post-link {
+  .post__link {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-2);
   }
   
-  .post-date {
+  .post__date {
     min-width: auto;
     font-size: 0.75rem;
     margin-bottom: var(--space-1);
   }
   
-  .post-title {
+  .post__title {
     font-size: 1rem;
     line-height: var(--leading-tight);
   }
   
-  .post-excerpt {
+  .post__excerpt {
     font-size: 0.8125rem;
     margin-top: var(--space-1);
   }
@@ -742,20 +638,35 @@ th {
   .about p, .about li {
     font-size: 1rem;
   }
+  
+  .post-nav {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .post-nav__link {
+    min-width: auto;
+    max-width: none;
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .post-nav__title {
+    font-size: 0.8125rem;
+  }
 }
 
 /* Mobile portrait (320px - 480px) */
 @media (max-width: 480px) {
-  .tabs {
+  .nav-container {
     gap: var(--space-6);
   }
   
-  .tab {
+  .nav__tab {
     font-size: 0.8125rem;
     padding: var(--space-2);
   }
   
-  .container {
+  .wrapper {
     padding: 0 var(--space-3);
   }
   
@@ -763,24 +674,24 @@ th {
     padding: var(--space-4) var(--space-3);
   }
   
-  .post-title {
+  .post__title {
     font-size: clamp(1.25rem, 5vw, 1.5rem);
     margin-bottom: var(--space-3);
   }
   
-  .post-link {
+  .post__link {
     gap: var(--space-1);
   }
   
-  .post-date {
+  .post__date {
     font-size: 0.6875rem;
   }
   
-  .post-title {
+  .post__title {
     font-size: 0.9375rem;
   }
   
-  .post-excerpt {
+  .post__excerpt {
     font-size: 0.75rem;
   }
   
@@ -802,11 +713,23 @@ th {
   .about ul {
     padding-left: var(--space-6);
   }
+  
+  .post-nav__link {
+    padding: var(--space-2);
+  }
+  
+  .post-nav__label {
+    font-size: 0.6875rem;
+  }
+  
+  .post-nav__title {
+    font-size: 0.75rem;
+  }
 }
 
 /* Extra small screens (320px and below) */
 @media (max-width: 320px) {
-  .container {
+  .wrapper {
     padding: 0 var(--space-2);
   }
   
@@ -814,23 +737,23 @@ th {
     padding: var(--space-3) var(--space-2);
   }
   
-  .tabs {
+  .nav-container {
     gap: var(--space-4);
   }
   
-  .tab {
+  .nav__tab {
     font-size: 0.75rem;
     padding: var(--space-1) var(--space-2);
   }
 }
 
 /* ==========================================================================
-   13. Motion & Accessibility
+   16. Motion & Accessibility
    ========================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
   .post-item,
-  .post-nav a {
+  .post-nav__link {
     transition: transform var(--transition);
   }
   
@@ -838,7 +761,7 @@ th {
     transform: translateY(-1px);
   }
   
-  .post-nav a:hover {
+  .post-nav__link:hover {
     transform: translateY(-1px);
   }
 }
@@ -871,7 +794,7 @@ th {
 }
 
 /* Focus styles */
-*:focus {
+*:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: var(--radius-small);
