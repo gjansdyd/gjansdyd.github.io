@@ -12,6 +12,7 @@ header_pages:
   - apple.md
   - etc.md
   - tags.md
+  - new.md
 
 plugins:
   - jekyll-feed
