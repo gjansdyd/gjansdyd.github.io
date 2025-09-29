@@ -1,0 +1,12 @@
+<nav class="post-nav" style="margin-top:24px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap">
+  {% if page.previous %}
+    <a class="prev" href="{{ page.previous.url | relative_url }}" style="border:1px solid var(--border, #e5e7eb);padding:10px 12px;border-radius:10px;text-decoration:none">
+      ← 이전: {{ page.previous.title }}
+    </a>
+  {% endif %}
+  {% if page.next %}
+    <a class="next" href="{{ page.next.url | relative_url }}" style="border:1px solid var(--border, #e5e7eb);padding:10px 12px;border-radius:10px;text-decoration:none;margin-left:auto">
+      다음: {{ page.next.title }} →
+    </a>
+  {% endif %}
+</nav>

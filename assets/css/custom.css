@@ -36,3 +36,12 @@ a, button { border-radius: 8px; }
   }
   hr { border-color: var(--border); }
 }
+
+/* 카드형 목록 */
+ul.cards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.cards .card { background: var(--card, #fff); border: 1px solid var(--border, #e5e7eb); border-radius: 12px; transition: transform .12s ease, box-shadow .12s ease; }
+.cards .card a { display: block; text-decoration: none; color: inherit; padding: 16px; }
+.cards .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.cards .card h3 { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.35; }
+.cards .card .meta { margin: 0 0 8px; font-size: .85rem; opacity: .7; }
+.cards .card .excerpt { margin: 0; font-size: .95rem; opacity: .9; }
