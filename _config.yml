@@ -2,39 +2,22 @@ title: Munyong’s Blog
 description: Kpop 가사 철학 읽기 · Apple Docs 번역 · 기타 등등
 theme: minima
 timezone: Asia/Seoul
-
-# 미래 날짜 글도 표시(UTC 빌드 오차 대비)
 future: true
 
-# 상단 메뉴
+# 헤더 메뉴에 표시할 페이지 (루트에 있는 .md 파일들)
 header_pages:
   - kpop.md
   - apple.md
   - etc.md
-  - tags.md
   - new.md
 
-plugins:
-  - jekyll-feed
-
-# 고정 URL 규칙 (카테고리/연-월-일/제목)
-permalink: /:categories/:year/:month/:day/:title/
-
-# 피드/RSS & SEO 태그 플러그인(둘 다 GitHub Pages에서 지원)
+# GitHub Pages에서 지원되는 플러그인만 사용
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# SEO 메타(원하면 추후 작성)
+# 고정 URL 규칙 (옵션)
+permalink: /:categories/:year/:month/:day/:title/
+
 author:
   name: "Munyong Heo"
-  url: "https://gjansdyd.github.io"
-  email: " "
-
-# 검색 콘솔(선택): 소유권 확인 코드 있으면 넣기
-# google_site_verification: "여기에_검색콘솔_HTML_메타_코드값"
-
-# 구글 애널리틱스(선택): GA4 Measurement ID (예: G-XXXXXXX)
-# minima 최신 버전에서는 아래 값만 넣어도 자동 삽입됨
-# 작동 안 하면 나중에 커스텀 include로 도와줄게
-google_analytics: ""   # 예: "G-ABCDE12345"
